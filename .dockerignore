@@ -1,0 +1,31 @@
+# 1. Segurança (O MAIS IMPORTANTE)
+.env
+.git
+.gitignore
+
+# 2. Lixo do Python (Compilados locais que quebram no Linux)
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# 3. Ambiente Virtual (O erro mais comum)
+# Nunca envie sua pasta venv, o Docker cria o ambiente dele sozinho!
+venv/
+env/
+.venv/
+
+# 4. Configurações de IDE (VS Code, Pycharm)
+.vscode/
+.idea/
+
+# 5. Arquivos temporários gerados pelo seu código
+# Não precisamos das fotos de teste ou recortes no servidor
+teste/
+recortes/
+temp_envio.jpg
+*.jpg
+*.png
+
+# 6. Logs e pastas do YOLO (Ultralytics cria a pasta 'runs')
+runs/
