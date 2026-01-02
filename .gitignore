@@ -1,0 +1,16 @@
+# Ignorar arquivos de sistema e cache
+__pycache__/
+*.pyc
+
+# Ignorar a chave secreta (MUITO IMPORTANTE)
+.env
+
+# Ignorar imagens temporárias e recortes
+*.jpg
+*.png
+resultados/
+temp_*.jpg
+
+# Ignorar ambiente virtual (se tiver)
+venv/
+.venv/
