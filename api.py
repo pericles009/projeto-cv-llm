@@ -2,7 +2,6 @@ from fastapi import FastAPI, UploadFile, File
 import shutil
 import os
 
-# AQUI ESTÁ O SEGREDO: Importamos sua função pronta!
 from inteligencia import analisar_imagem_agora 
 
 app = FastAPI()
@@ -15,7 +14,7 @@ async def api_analisar(arquivo: UploadFile = File(...)):
     with open(nome_temp, "wb") as buffer:
         shutil.copyfileobj(arquivo.file, buffer)
     
-    # 2. Chama a SUA inteligência que já estava pronta
+    # 2. Chama a IA
     # Ela vai fazer o OCR, chamar o Gemini e devolver o resultado
     resultado = analisar_imagem_agora(nome_temp)
     
