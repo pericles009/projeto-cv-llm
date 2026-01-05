@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-CHAVE_API = "AIzaSyB2-NCA-EZ41kerw9gzwwY45tx7pxl0FLM" # Não esqueça de colar sua chave
+CHAVE_API = " " # chave API
 genai.configure(api_key=CHAVE_API)
 
 print("Listando modelos disponíveis...")
