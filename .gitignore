@@ -2,7 +2,7 @@
 __pycache__/
 *.pyc
 
-# Ignorar a chave secreta (MUITO IMPORTANTE)
+# Ignorar a chave secreta
 .env
 
 # Ignorar imagens temporárias e recortes
@@ -11,6 +11,6 @@ __pycache__/
 resultados/
 temp_*.jpg
 
-# Ignorar ambiente virtual (se tiver)
+# Ignorar ambiente virtual
 venv/
 .venv/
