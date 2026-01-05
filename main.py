@@ -2,10 +2,7 @@ import cv2
 from ultralytics import YOLO
 import os
 import time
-import requests # <--- ADICIONADO: Necessário para falar com a API
-
-# --- REMOVIDO: from inteligencia import ... 
-# Não importamos mais a inteligência aqui, pois ela roda no servidor (api.py)
+import requests
 
 # Cria pastas para organizar
 os.makedirs('resultados/recortes', exist_ok=True)
@@ -84,13 +81,11 @@ def read_image():
                 try:
                     url = "http://127.0.0.1:8000/analisar"
                     
-                    # CORREÇÃO DO ARQUIVO ABERTO:
                     # Usamos 'with open' para garantir que o arquivo feche após o envio
                     with open(nome_arquivo, 'rb') as f:
                         arquivos = {'arquivo': f}
                         resposta = requests.post(url, files=arquivos)
                     
-                    # Agora o arquivo já está fechado, o código pode continuar
                     
                     if resposta.status_code == 200:
                         dados = resposta.json()
@@ -109,7 +104,6 @@ def read_image():
                 except Exception as e:
                     print(f"❌ Erro: {e}")
 
-                # Agora sim pode deletar, pois o 'with open' já fechou o arquivo
                 if os.path.exists(nome_arquivo):
                     try:
                         os.remove(nome_arquivo)
